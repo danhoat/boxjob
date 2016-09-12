@@ -1,0 +1,2 @@
+var JB = {};
+JB.Modal = {};

@@ -1,0 +1,29 @@
+.edit-field{
+	display: none;
+}
+.form-btn-edit{
+	position: absolute;
+	top:0;
+	right: 0;
+}
+.profile-item-row .btn-edit{
+	display: none;
+}
+.profile-item-row form:hover .btn-edit{
+	display: block;
+}
+.profile-item-row form{
+	padding: 0;
+}
+.profile-item-row{
+	display: block;
+	clear: both;
+	padding: 10px 10px 30px 10px;;
+	position: relative;
+}
+.profile-item-row form{
+	position: relative;
+}
+.history-des{
+	width: 100%;
+}
