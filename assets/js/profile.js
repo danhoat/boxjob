@@ -21,6 +21,7 @@
 	  			$form 	 = $button.closest("form"),
 	  			$static 	= $form.find(".view-control");
 	  			$content = $form.find('.edit-field');
+	  			console.log($form);
 	  		//$static.toggleClass('hide');
 	  		$content.slideToggle(600, function () {});
 	  	},

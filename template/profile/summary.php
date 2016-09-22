@@ -38,6 +38,9 @@ global $profile;
                     </div>
                 </div>
             </div>
+            <button data-type="edit-only" type="button" class="btn btn-default btn-block no-border add-one-more-section" style="display: inline-block;">
+                <strong>Add Summary</strong>
+            </button>
         </form>
     </div>
 </fieldset>

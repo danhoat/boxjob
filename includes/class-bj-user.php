@@ -4,11 +4,11 @@ class bj_user{
 
 	}
 	public static function add_role(){
-		$roles_set = get_option('jobseeker_role_is_set');
-	    if(!$roles_set){
+		$roles_set = false; //get_option('jobseeker_role_is_set');
+	    if ( !$roles_set ){
 	        add_role(JOBSEEKER, 'JOBSEEKER', array(
 	            'read' => true,
-	            'edit_posts' => false,
+	            'edit_posts' => true,
 	            'delete_posts' => false,
 	            'upload_files' => true
 	        ));

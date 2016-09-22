@@ -10,6 +10,7 @@ function bx_social_button_signup(){?>
      or
             <a href="#" data-eo-google-signup="" data-popup="true" data-auth-callback="googleCallback(profile)" rel="nofollow" class="ng-isolate-scope">
             Google</a>.
+            <?php button_fb_log() ;?>
 
     </p>
 <?php } ?>

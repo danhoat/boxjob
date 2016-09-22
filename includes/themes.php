@@ -316,6 +316,7 @@ function bx_editor_settings() {
 }
 function get_profile_of_user($user_id){
 	global $wpdb;
-	$profile = $wpdb->get_row( "SELECT ID FROM $wpdb->posts WHERE post_author = $user_id AND post_type = ".PROFILE_PT );
+	$profile = $wpdb->get_row( "SELECT ID FROM $wpdb->posts WHERE post_author = $user_id AND post_type = '".PROFILE_PT."'" );
+
 	return ($profile !== null) ? (int) $profile->ID : 0 ;
 }

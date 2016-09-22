@@ -175,12 +175,15 @@ class JB_AJAX {
 	public static function bx_signup(){
 		$response = array(
 				'success' 	=> false,
-				'msg' 		=> __('has something wrong', 'boxtheme'),
+				'msg' 		=> __('Has something wrong', 'boxtheme'),
 			);
 		$request = $_REQUEST;
 
 		$user = new bj_user();
-		$user_id = $user->sync($request, 'created');
+		if ( empty($request['user_pass']) )
+			$request['user_pass'] = wp_generate_password( 12, true );
+
+		$user_id = $user->sync( $request, 'created');
 
 		if ( ! is_wp_error( $user_id ) ) {
 			//auto login

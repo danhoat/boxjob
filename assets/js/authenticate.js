@@ -48,6 +48,6 @@
 	  	}
 	});
 	$(document).ready(function() {
-		new JB.auth();
+		//new JB.auth();
 	});
 })(jQuery)

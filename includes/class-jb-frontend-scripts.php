@@ -186,9 +186,9 @@ class JB_Frontend_Scripts {
 		self::enqueue_script( 'chosen.proto.min', $assets_path . 'js/chosen.jquery.js', array( 'jquery' ) );
 		self::enqueue_script( 'jb-global', $assets_path . 'js/global.js', array( 'jquery','underscore','backbone' ) );
 		self::enqueue_script( 'front', $assets_path . 'js/front.js', array( 'jb-global','chosen.proto.min' ) );
-		self::enqueue_script( 'gmap', '//maps.google.com/maps/api/js?key=AIzaSyBIkgfjke0dqw4veWfg1Z0c-6JigHlqk6s', array( 'jb-global' ) );
+		//self::enqueue_script( 'gmap', '//maps.google.com/maps/api/js?key=AIzaSyBIkgfjke0dqw4veWfg1Z0c-6JigHlqk6s', array( 'jb-global' ) );
 
-		self::enqueue_script( 'custom-map', $assets_path . 'js/custom_map.js', array( 'jb-global' ,'gmap' ) );
+		//self::enqueue_script( 'custom-map', $assets_path . 'js/custom_map.js', array( 'jb-global' ,'gmap' ) );
 		//maps.google.com/maps/api/js?sensor=false
 		if ( is_page_template( 'page-post-job.php' )){
 			self::enqueue_script( 'post-job', $assets_path . 'js/post-job.js', array('jb-global', 'plupload-all') );
@@ -246,6 +246,7 @@ class JB_Frontend_Scripts {
 					'ajax_url'    	=> admin_url().'/admin-ajax.php',
 					'selected_local'  => $locals,
 					'is_free_submit_job' => is_free_submit_job(),
+					'role_default' 	=> is_page_template( 'page-signup-employer.php' ) ? EMPLOYER : JOBSEEKER,
 					'pconfig' 		=> array(
 				        'runtimes' => 'html5,silverlight,flash,html4',
 				        'browse_button' => 'plupload-browse-button', // will be adjusted per uploader

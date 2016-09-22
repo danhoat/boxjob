@@ -36,11 +36,12 @@ class bj_profile{
 	function _update($args){
 
 		$allow = $this->check_permission($args);
-
 		if( !is_wp_error($allow) ){
 			$args = $this->validate_meta($args);
-			wp_set_post_terms( $args['ID'], $args['tax_input']['skill'], 'skill' );
-			$profile_id = wp_update_post($args);
+			//wp_set_post_terms( $args['ID'], $args['tax_input']['skill'], 'skill' );
+			var_dump($args);
+			$allow = wp_update_post($args);
+			var_dump($allow);
 			do_action( 'bx_after_update_profile', $profile_id);
 			return $profile_id;
 		}

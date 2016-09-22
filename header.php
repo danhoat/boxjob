@@ -2,6 +2,9 @@
 // $method = 'insert';
 // $form = array();
 // JB_Job::sync($method, $form);
+//
+$args = array('ID' => 386,'post_content' => '9999');
+$allow = wp_update_post($args);
 /**
  * The Header for our theme
  *

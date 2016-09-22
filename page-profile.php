@@ -26,7 +26,8 @@
                     <?php
                     global $profile, $profile_id, $user_ID;
                     $profile_id = get_profile_of_user($user_ID);
-                    if(empty($profile_id) || !get_post($profile_id)){
+
+                    if( ! $profile_id ){
                         $args = array(
                             'post_type' => PROFILE_PT,
                             'post_status' => 'publish',
@@ -37,9 +38,6 @@
                         $profile_id = wp_insert_post($args);
                     }
                     $profile = get_post($profile_id);
-                    echo '<pre>';
-                    var_dump($profile);
-                    echo '</pre>';
                     ?>
                     <?php get_template_part( 'template/profile/summary' ); ?>
                     <?php get_template_part( 'template/profile/skill' ); ?>
