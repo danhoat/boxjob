@@ -47,7 +47,7 @@ final Class boxtheme{
 
 	function includes(){
 
-		include_once( get_template_directory().'/includes/class-bj-user.php');
+		include_once( get_template_directory().'/includes/class-jb-user.php');
 		include_once( get_template_directory().'/includes/class-jb-post-types.php');
 		include_once( get_template_directory().'/includes/class-job.php');
 		include_once( get_template_directory().'/includes/class-install.php');

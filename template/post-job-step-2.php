@@ -2,30 +2,30 @@
 <form name="subit_job" id="frm_subit_job" class ="subit_job">
     <fieldset class="form-group">
         <label for="job_title">Job title</label>
-        <input type="text" class="form-control required" " name="post_title" id="post_title" placeholder="Job title">
+        <input type="text" class="form-control required" required name="post_title" id="post_title" placeholder="Job title">
         <small class="text-muted">Enter job title</small>
     </fieldset>
     <fieldset class="form-group row-fluid">
         <div class="col-md-7">
         <label for="full_address" class=" form-control-label">Address</label>
-        <input type="text" class="form-control" name ="full_address" id="full_address" placeholder="Address">
+        <input type="text" class="form-control required post-job-field" required name ="full_address" id="full_address" placeholder="<?php _e('Address','boxtheme');?>">
         <input type="hidden" name="jb_lat" id="jb_lat">
         <input type="hidden" name="jb_lng" id="jb_lng">
         </div>
         <div class="col-md-5">
             <label class="col-md-4"><?php _e('Location','boxtheme');?></label>
             <?php
-            $args = array(
-            //'show_option_all'    => 'All locations',
-            'child_of'           => 0,
-            'hierarchical'       => 1,
-            'name'               => 'location',
-            'class'              => 'postform chosen-multi required',
-               'taxonomy'           => 'location',
-            'hide_if_empty'      => false,
-            'value_field'        => 'id',
-            );
-            wp_dropdown_categories($args );
+                $args = array(
+                'show_option_all'    => 'All locations',
+                'child_of'           => 0,
+                'hierarchical'       => 1,
+                'name'               => 'location',
+                'class'              => 'postform chosen-multi required',
+                'taxonomy'           => 'location',
+                'hide_if_empty'      => false,
+                'value_field'        => 'id',
+                );
+                wp_dropdown_categories($args );
             ?>
         </div>
     </fieldset>
@@ -35,25 +35,26 @@
 
     <fieldset class="form-group">
         <div class="col-md-6">
-            <label class="col-md-4">Job type</label>
+            <label class="col-md-4">Select type</label>
             <?php
-            $args = array(
-            //'show_option_all'    => 'All locations',
-            'child_of'           => 0,
-            'hierarchical'       => 1,
-            'name'               => 'type',
-            'class'              => 'postform chosen-multi required',
-            'taxonomy'           => 'type',
-            'hide_if_empty'      => false,
-            'value_field'        => 'id',
-            );
-            wp_dropdown_categories($args );
+                $args = array(
+                'show_option_all'    => __('Select type','boxtheme'),
+                'child_of'           => 0,
+                'hierarchical'       => 1,
+                'name'               => 'type',
+                'class'              => 'postform chosen-multi required',
+                'taxonomy'           => 'type',
+                'hide_if_empty'      => false,
+                'value_field'        => 'id',
+                );
+                wp_dropdown_categories($args );
             ?>
         </div>
          <div class="col-md-6">
             <label class="col-md-4">Job category</label>
             <?php
             $args = array(
+            'show_option_all'    => __('Select categories','boxtheme'),
             'show_option_none'   => '',
             'child_of'           => 0,
             'echo'               => 0,

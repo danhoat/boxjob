@@ -49,6 +49,6 @@
            <?php get_sidebar(); ?>
         </div>
     </div>
-    <!-- End List Job !-->
+
 
 <?php get_footer();?>
