@@ -18,8 +18,6 @@
 <div id="map-canvas" style="width: 100%; height: 350px;"></div>
     <?php get_template_part( 'template/search', 'form' ); ?>
     <?php //get_template_part( 'template/head', 'line' ); ?>
-    <?php //get_template_part( 'template/head', 'line' ); ?>
-
 
     <!-- List job !-->
     <div class="container">
@@ -28,7 +26,6 @@
             <h2>Day laf search.php </h2>
             <?php
             $s = get_query_var( 'search' );
-            var_dump($s);
             $args = array(
                 'post_type'     => 'job',
                 'post_status'   => 'publish',

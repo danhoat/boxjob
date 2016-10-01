@@ -5,12 +5,6 @@
             <div class="col-md-8 list-job">
             <h2>Latest job </h2>
             <?php
-            // $args = array(
-            //     'post_type'     => 'job',
-            //     'post_status'   => 'publish',
-            //     'paged'         => max( 1, get_query_var('paged') ),
-            // );
-            // $jb_query = new WP_Query( $args );
             if( have_posts() ):
 
                 echo '<ul class="job-listing">';

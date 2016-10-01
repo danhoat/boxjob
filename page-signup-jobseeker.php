@@ -3,8 +3,7 @@
  * Template Name: Page Contractor Signup
 */
 ?>
-
-	<?php get_header(); ?>
+<?php get_header(); ?>
 
     <div class="container">
         <div class="row m-lg-top m-xlg-bottom">

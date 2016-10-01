@@ -27,16 +27,6 @@
                     global $profile, $profile_id, $user_ID;
                     $profile_id = get_profile_of_user($user_ID);
 
-                    if( ! $profile_id ){
-                        $args = array(
-                            'post_type' => PROFILE_PT,
-                            'post_status' => 'publish',
-                            'post_title' => 'Jobseeker\'s Profile',
-                            'post_author'  => get_current_user_id(),
-
-                        );
-                        $profile_id = wp_insert_post($args);
-                    }
                     $profile = get_post($profile_id);
                     ?>
                     <?php get_template_part( 'template/profile/summary' ); ?>

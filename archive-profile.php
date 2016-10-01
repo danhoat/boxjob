@@ -3,21 +3,21 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 list-job">
-            <h2>List profiles </h2>
-            <?php
-            if( have_posts() ):
+                <h2>List profiles </h2>
+                <?php
+                if( have_posts() ):
 
-                echo '<ul class="job-listing">';
-                while(have_posts() ):
-                    the_post();
-                    get_template_part('template/listing','job-item' );
+                    echo '<ul class="job-listing">';
+                    while(have_posts() ):
+                        the_post();
+                        get_template_part('template/listing','job-item' );
 
-                endwhile;
-                echo '</ul>';
+                    endwhile;
+                    echo '</ul>';
 
-                jb_pagenate_links( );
-            endif;
-            ?>
+                    jb_pagenate_links( );
+                endif;
+                ?>
             </div> <!-- list-job !-->
            <?php get_sidebar(); ?>
         </div>

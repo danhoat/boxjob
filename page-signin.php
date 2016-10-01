@@ -5,7 +5,7 @@
 ?>
 
 	<?php get_header(); ?>
-    <?php get_template_part( 'template/search', 'form' ); ?>
+   <?php get_template_part( 'template/search', 'form' ); ?>
 
  	<!-- List job !-->
     <div class="container">

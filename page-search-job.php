@@ -66,12 +66,8 @@
                     'current'   => max( 1, get_query_var('paged') ),
                     'total'     => $wp_query->max_num_pages,
                 ) ;
-                //$add_query['paged'] = $args['paged'];
                 $default['add_args'] = $add_query;
-                //$default['base'] = home_url('search');
                 $paginate = jb_pagenate_links( $jb_query);
-                //$paginate = str_replace('page-numbers', 'pagination', $paginate);
-
                 echo $paginate;
             else:
                 _e('did not found post', 'boxtheme');
