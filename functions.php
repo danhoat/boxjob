@@ -8,7 +8,7 @@ define( 'EMPLOYER' ,'employer');
 define('JOB_PT','job');
 define('PROFILE_PT','profile');
 
-final Class boxtheme{
+final Class BoxThemes{
 
 	public $version = 1.0;
 	/**
@@ -103,9 +103,6 @@ final Class boxtheme{
 		jb_custom_fonts();
 	}
 	function bj_custom_search_template($template){
-		//var_dump($_REQUEST);
-		//var_dump($template);
-		//die();
 		return $template;
 	}
 	/**
@@ -157,7 +154,7 @@ final Class boxtheme{
 	}
 }
 
-boxtheme::instance();
+BoxThemes::instance();
 
 function add_theme_caps(){
   global $pagenow;
