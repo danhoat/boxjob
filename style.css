@@ -357,3 +357,7 @@ body#tinymce{
 .filelist img{
 	max-width: 150px;
 }
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}

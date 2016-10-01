@@ -5,14 +5,14 @@
         <input type="text" class="form-control required" required name="post_title" id="post_title" placeholder="Job title">
         <small class="text-muted">Enter job title</small>
     </fieldset>
-    <fieldset class="form-group row-fluid">
-        <div class="col-md-7">
+    <fieldset class="form-group row-fluid  no-gutter">
+        <div class="col-md-6">
         <label for="full_address" class=" form-control-label">Address</label>
         <input type="text" class="form-control required post-job-field" required name ="full_address" id="full_address" placeholder="<?php _e('Address','boxtheme');?>">
         <input type="hidden" name="jb_lat" id="jb_lat">
         <input type="hidden" name="jb_lng" id="jb_lng">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 pull-right">
             <label class="col-md-4"><?php _e('Location','boxtheme');?></label>
             <?php
                 $args = array(
@@ -30,11 +30,8 @@
             ?>
         </div>
     </fieldset>
-    <fieldset class="form-group">
 
-    </fieldset>
-
-    <fieldset class="form-group">
+    <fieldset class="form-group no-gutter">
         <div class="col-md-6">
             <label class="col-md-4"><?php _e('Select type','boxtheme');?></label>
             <?php
@@ -52,7 +49,7 @@
                 wp_dropdown_categories($args );
             ?>
         </div>
-         <div class="col-md-6">
+        <div class="col-md-6 ">
             <label class="col-md-4"><?php _e('Job category','boxtheme');?></label>
             <?php
             $args = array(
@@ -72,7 +69,7 @@
             ?>
         </div>
     </fieldset>
-    <fieldset class="form-group">
+    <fieldset class="form-group no-gutter">
         <?php
         // adjust values here
         $id = "img1"; // this will be the name of form field. Image url(s) will be submitted in $_POST using this key. So if $id == “img1" then $_POST[“img1"] will have all the image urls
@@ -86,7 +83,7 @@
         $height = null; // If you want to automatically resize all uploaded images then provide height here (in pixels)
         ?>
 
-        <label>Featured job image</label>
+        <label><?php _e('Featured  image','boxtheme');?></label>
         <input type="hidden" name="<?php echo $id; ?>" id="<?php echo $id; ?>" value="<?php echo $svalue; ?>" />
         <div class="plupload-upload-uic hide-if-no-js <?php if ($multiple): ?>plupload-upload-uic-multiple<?php endif; ?>" id="<?php echo $id; ?>plupload-upload-ui">
             <button  id="<?php echo $id; ?>plupload-browse-button" type="button"  class="button btn-upload-process" /> <i class='loading fa fa-refresh fa-spin hide'></i> <?php _e('Choose an image'); ?> <span class="glyphicon glyphicon-plus"></span>
