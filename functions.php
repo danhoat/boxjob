@@ -167,12 +167,12 @@ function add_theme_caps(){
 
     // This only works, because it accesses the class instance.
     // would allow the author to edit others' posts for current theme only
-    $role->add_cap( 'edit_tes_posts' ); 
+    $role->add_cap( 'edit_tes_posts' );
   }
   else {
     // Theme is deactivated
     // Remove the capacity when theme is deactivated
-    $role->remove_cap( 'edit_others_posts' ); 
+    $role->remove_cap( 'edit_others_posts' );
   }
 }
 add_action( 'load-themes.php', 'add_theme_caps' );
