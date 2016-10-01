@@ -21,9 +21,6 @@
 			$(".chosen-multi").chosen({width: "95%"});
 			/** update js */
 			var view = this;
-			console.log(view);
-
-			console.log(jb_global.pconfig);
 
 		        $(".plupload-upload-uic").each(function() {
 		            var $this = $(this);
@@ -46,6 +43,8 @@
 		            var uploader = new plupload.Uploader(pconfig);
 
 		            uploader.bind('Init', function(up) {
+		            	console.log('init');
+		            	// <i class="fa fa-spinner fa-spin"></i>
 
 		            });
 
@@ -53,51 +52,27 @@
 
 		            // a file was added in the queue
 		            uploader.bind('FilesAdded', function(up, files) {
-		                // $.each(files, function(i, file) {
-		                //     $this.find('.filelist').append('<div class="file" id="' + file.id + '"><b>' +
-
-		                //     file.name + '</b> (<span>' + plupload.formatSize(0) + '</span>/' + plupload.formatSize(file.size) + ') ' + '<div class="fileprogress"></div></div>');
-		                // });
+		            	console.log('added 1');
+		            	console.log();
+		            	view.$el.find("i.loading").toggleClass("hide");
 
 		                up.refresh();
 		                up.start();
 		            });
 
 		            uploader.bind('UploadProgress', function(up, file) {
-
+		            	console.log('progress');
 		                // $('#' + file.id + " .fileprogress").width(file.percent + "%");
 		                // $('#' + file.id + " span").html(plupload.formatSize(parseInt(file.size * file.percent / 100)));
 		            });
 
 		            // a file was uploaded
 		            uploader.bind('FileUploaded', function(up, file, response) {
-		            	console.log('upload done');
 		            	response = $.parseJSON(response.response);
-		            	console.log(up);
-		            	console.log(file);
-		            	console.log('test');
-		            	view.$el.find("._thumbnail_id").val(response.attach_id);
-		            	console.log(response);
-		            	console.log(response.attach_id);
-		            	console.log(response.response);
-		                //$('#' + file.id).fadeOut();
-		                // response = response["response"]
-		                // // add url to the hidden field
-		                // if ($this.hasClass("plupload-upload-uic-multiple")) {
-		                //     // multiple
-		                //     var v1 = $.trim($("#" + imgId).val());
-		                //     if (v1) {
-		                //         v1 = v1 + "," + response;
-		                //     } else {
-		                //         v1 = response;
-		                //     }
-		                //     $("#" + imgId).val(v1);
-		                // } else {
-		                //     // single
-		                //     $("#" + imgId).val(response + "");
-		                // }
-		                // // show thumbs
-		                // view.plu_show_thumbs(imgId);
+		            	view.$el.find("._thumbnail_id").val(response.file.id);
+		            	view.$el.find(".filelist").html('<img src ="'+response.file.guid+'" />');
+		            	view.$el.find(".btn-upload-process").addClass("disabled");
+		            	view.$el.find("i.loading").toggleClass("hide");
 		            });
 		        });
 

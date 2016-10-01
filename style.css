@@ -354,3 +354,6 @@ div.mce-toolbar-grp{
 body#tinymce{
 	line-height: 1;
 }
+.filelist img{
+	max-width: 150px;
+}

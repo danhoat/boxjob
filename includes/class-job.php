@@ -113,6 +113,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 			$request['tax_input'] = $tax_input;
 			$request['post_status'] = $this->get_post_status_step_2();
+
 			$args 	= apply_filters( 'args_pre_insert_job', $request );
 
 			$job_id = wp_insert_post( $request );
@@ -151,6 +152,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		 */
 		function get_post_status_step_2(){
 			$post_status = 'draft';
+
+			if(current_user_can('manager_options'))
+				return 'publish';
+
 			if( is_free_submit_job() ) {
 				if ( is_admin_role() )
 					return  'publish';

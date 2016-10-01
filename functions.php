@@ -50,7 +50,7 @@ final Class BoxThemes{
 		include_once( get_template_directory().'/includes/class-jb-user.php');
 		include_once( get_template_directory().'/includes/class-jb-post-types.php');
 		include_once( get_template_directory().'/includes/class-job.php');
-		include_once( get_template_directory().'/includes/class-install.php');
+		//include_once( get_template_directory().'/includes/class-install.php');
 		include_once( get_template_directory().'/includes/social/facebook.php');
 		include_once( get_template_directory().'/includes/class-jb-profile.php');
 		include_once( get_template_directory().'/includes/template.php' );

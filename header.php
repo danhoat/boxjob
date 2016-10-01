@@ -40,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="<?php echo home_url();?>">boxtheme</a>
+              <a class="navbar-brand" href="<?php echo home_url();?>">BoxThemes</a>
             </div>
             <div class="navbar-collapse col-sm-offset-5" id="myNavbar">
                  <?php    /**

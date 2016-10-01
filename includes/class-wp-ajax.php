@@ -264,11 +264,18 @@ class JB_AJAX {
             );
 
             // Run the wp_insert_attachment function. This adds the file to the media library and generates the thumbnails. If you wanted to attch this image to a post, you could pass the post id as a third param and it'd magically happen.
+
             $attach_id = wp_insert_attachment($attachment, $file_name_and_location, $parent);
-            require_once (ABSPATH . "wp-admin" . '/includes/image.php');
-            $attach_data = wp_generate_attachment_metadata($attach_id, $file_name_and_location);
-            wp_update_attachment_metadata($attach_id, $attach_data);
-            wp_send_json( array('success' => true,'attach_id' => $attach_id) );
+            if(!is_wp_error($attach_id)){
+            	$attachment['id'] = $attach_id;
+            	require_once (ABSPATH . "wp-admin" . '/includes/image.php');
+            	$attach_data = wp_generate_attachment_metadata($attach_id, $file_name_and_location);
+        	    wp_update_attachment_metadata($attach_id, $attach_data);
+        	    wp_send_json( array('success' => true,'file' => $attachment, 'msg' => __('Uploaded is successful','box_theme') ) );
+        	}
+       	    wp_send_json( array('success' => false, 'msg' => $attach_id->get_error_message() ) );
+
+
 
 
 		}

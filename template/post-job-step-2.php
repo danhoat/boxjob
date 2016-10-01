@@ -16,14 +16,15 @@
             <label class="col-md-4"><?php _e('Location','boxtheme');?></label>
             <?php
                 $args = array(
-                'show_option_all'    => 'All locations',
+                'show_option_all'    => __('Select a location','boxtheme'),
                 'child_of'           => 0,
                 'hierarchical'       => 1,
                 'name'               => 'location',
-                'class'              => 'postform chosen-multi required',
+                'class'              => 'postform chosen-multi required tax-field',
                 'taxonomy'           => 'location',
                 'hide_if_empty'      => false,
                 'value_field'        => 'id',
+                 'hide_empty'         =>  0,
                 );
                 wp_dropdown_categories($args );
             ?>
@@ -35,14 +36,15 @@
 
     <fieldset class="form-group">
         <div class="col-md-6">
-            <label class="col-md-4">Select type</label>
+            <label class="col-md-4"><?php _e('Select type','boxtheme');?></label>
             <?php
                 $args = array(
-                'show_option_all'    => __('Select type','boxtheme'),
-                'child_of'           => 0,
+                'show_option_all'    => __('Select a type','boxtheme'),
+
                 'hierarchical'       => 1,
+                'hide_empty'         =>  0,
                 'name'               => 'type',
-                'class'              => 'postform chosen-multi required',
+                'class'              => 'postform chosen-multi required tax-field',
                 'taxonomy'           => 'type',
                 'hide_if_empty'      => false,
                 'value_field'        => 'id',
@@ -51,7 +53,7 @@
             ?>
         </div>
          <div class="col-md-6">
-            <label class="col-md-4">Job category</label>
+            <label class="col-md-4"><?php _e('Job category','boxtheme');?></label>
             <?php
             $args = array(
             'show_option_all'    => __('Select categories','boxtheme'),
@@ -60,10 +62,11 @@
             'echo'               => 0,
             'hierarchical'       => 1,
             'name'               => 'job_cat',
-            'class'              => 'job_cat postform chosen-multi required',
+            'class'              => 'job_cat postform chosen-multi required tax-field',
             'taxonomy'           => 'job_cat',
             'hide_if_empty'      => false,
             'value_field'        => 'id',
+            'hide_empty'         =>  0,
             );
             echo wp_dropdown_categories($args );
             ?>
@@ -86,7 +89,9 @@
         <label>Featured job image</label>
         <input type="hidden" name="<?php echo $id; ?>" id="<?php echo $id; ?>" value="<?php echo $svalue; ?>" />
         <div class="plupload-upload-uic hide-if-no-js <?php if ($multiple): ?>plupload-upload-uic-multiple<?php endif; ?>" id="<?php echo $id; ?>plupload-upload-ui">
-            <input id="<?php echo $id; ?>plupload-browse-button" type="button" value="<?php esc_attr_e('Choose an image'); ?>" class="button" />
+            <button  id="<?php echo $id; ?>plupload-browse-button" type="button"  class="button btn-upload-process" /> <i class='loading fa fa-refresh fa-spin hide'></i> <?php _e('Choose an image'); ?> <span class="glyphicon glyphicon-plus"></span>
+
+            </button>
             <span class="ajaxnonceplu" id="ajaxnonceplu<?php echo wp_create_nonce($id . 'pluploadan'); ?>"></span>
             <?php if ($width && $height): ?>
                     <span class="plupload-resize"></span><span class="plupload-width" id="plupload-width<?php echo $width; ?>"></span>
