@@ -11,10 +11,10 @@
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * @since boxtheme 1.0
  */
 ?>
-    <?php get_header(); ?>
+<?php get_header(); ?>
 <div id="map-canvas" style="width: 100%; height: 350px;"></div>
     <?php get_template_part( 'template/search', 'form' ); ?>
     <?php //get_template_part( 'template/head', 'line' ); ?>
