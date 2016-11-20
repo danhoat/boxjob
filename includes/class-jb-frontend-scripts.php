@@ -94,6 +94,13 @@ class JB_Frontend_Scripts {
 				'media'   => 'all'
 			),
 
+			'temp-style' => array(
+				'src'	  => 	str_replace( array( 'http:', 'https:' ), '', JB_ASSET_URI ) . 'css/temporary.css',
+				'deps'    => '',
+				'version' => JB_VERSION,
+				'media'   => 'all'
+			),
+
 			// 'bootstrap-theme' => array(
 			// 	'src'     => str_replace( array( 'http:', 'https:' ), '', JB_ASSET_URI ) . 'bootstrap/css/bootstrap-theme.min.css',
 			// 	'deps'    => '',

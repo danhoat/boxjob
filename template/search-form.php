@@ -1,5 +1,5 @@
 <?php $search_url = 'http://localhost/et/jb/?page_id=25/'; ?>
-<section id="search_line" class="search-line">
+<section id="search_line" class="search-line" style="height: 399px;">
     <div class="container">
         <div class="row-fluid">
             <div class="col-md-12">

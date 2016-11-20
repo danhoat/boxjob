@@ -54,6 +54,8 @@ final Class BoxThemes{
 		include_once( get_template_directory().'/includes/social/facebook.php');
 		include_once( get_template_directory().'/includes/class-jb-profile.php');
 		include_once( get_template_directory().'/includes/template.php' );
+		// backend
+		include_once( get_template_directory().'/includes/kingcomposer_backend.php' );
 
 		include_once( get_template_directory().'/includes/themes.php' );
 		include_once(get_template_directory() .'/includes/payments/config.php');

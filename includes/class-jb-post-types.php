@@ -158,6 +158,25 @@ class JB_Post_types {
 	    ));
 	 	register_post_type( 'profile', $args );
 
+ 		$args = array(
+      	'public' => true,
+      	'label'  => 'Testimonial',
+      	'capability_type' => 'post',
+      	'description'         => __( 'This is where you can add new testimonial.', 'boxtheme' ),
+      	'public' => true,
+      	'capability_type' => 'post',
+
+			'show_ui'             => true,
+			'capability_type'     => 'post',
+			'publicly_queryable'  => false,
+			'exclude_from_search' => true,
+			'hierarchical'        => false, // Hierarchical causes memory issues - WP loads all records!
+			'query_var'           => false,
+			'supports'            => array( 'title', 'editor', 'author', 'excerpt', 'custom-fields'),
+			'show_in_nav_menus'   => true
+	    );
+	 	register_post_type( 'testimonial', $args );
+
 	}
 	/**
 	 * Register core taxonomies.
