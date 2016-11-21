@@ -409,4 +409,9 @@ body#tinymce{
 	padding-top: 30px;
 	padding-bottom: 200px;
 	border-bottom: 1px solid #ccc;
+	background: url();
+}
+.testimonial-item {
+
+	padding:0 20%;
 }

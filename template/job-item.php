@@ -34,9 +34,9 @@
         echo '<div class="col-md-6 col-xs-6 job-listing-info ">';
             echo '<h5 class="job-listing-title"><a href="'.get_permalink().'">'.$job->post_title.'</a></h3>';
                 echo '<div class="row-fluid">';
-                    echo 'YoungWorld';
-                    echo 'YoungWorld';
-                    echo 'YoungWorld';
+                    echo 'YoungWorld ... ';
+                    echo 'YoungWorld ...';
+                    echo 'YoungWorld ...';
                 echo '</div>';
         echo '</div>';
         echo '<div class="col-md-5 col-xs-6 right">';

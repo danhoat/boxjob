@@ -55,18 +55,18 @@ if ( $the_query->have_posts() ) {
 
 	global $post;
 
-	if( !empty($title) )
-		echo '<h3 class="list-post-title">'. $title .'</h3>';
 
-	echo '<div '. implode(' ', $element_attribute) .' style ="height:300px;">';
+
+	echo '<div '. implode(' ', $element_attribute) .' style ="height:398px; background1:url('.$bg_url.') top center no-repeat; ">';
 
 	while ( $the_query->have_posts() ) {
 
 		$the_query->the_post();
 		?>
-		<div class="item list-item post-<?php echo esc_attr( $post->ID ); ?>">
+		<div class="item list-item post-<?php echo esc_attr( $post->ID ); ?> testimonial-item">
 
 			<div class="post-content">
+				<center>
 
 				<?php
 				if ( has_post_thumbnail($post->ID) && 'yes' === strtolower($thumbnail) ) {
@@ -74,12 +74,12 @@ if ( $the_query->have_posts() ) {
 					echo '<div class="image">';
 					echo get_the_post_thumbnail($post->ID, $image_size);
 
-					echo '<h3 class="caption"><a href="'. esc_attr( get_permalink( $post->ID ) ). '">'. get_the_title() .'</a></h3>';
+					echo '<h3 class="caption">'. get_the_title() .'</h3>';
 					echo '</div>';
 
 				}else{
 
-					echo '<h3 class="title"><a href="'. esc_attr( get_permalink( $post->ID ) ). '">'. get_the_title() .'</a></h3>';
+					echo '<h3 class="title">'. get_the_title() .'</h3>';
 
 				}
 				?>
@@ -101,6 +101,7 @@ if ( $the_query->have_posts() ) {
 				?>
 
 				<div class="in-post-content"><?php echo wp_trim_words( get_the_content(), 25, ' ...' ); ?></div>
+				</center>
 
 			</div>
 

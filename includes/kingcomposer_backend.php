@@ -134,6 +134,8 @@ $kc->add_map(
 			'description' => __('', 'boxtheme'),
 			'icon' => 'kc-icon-pcarousel',
 			'category' => 'Blog Posts',
+			'css_box' => true,
+			'is_container' => false,
 			'tab_icons' => array(
 				'general' => 'et-tools',
 				'styling' => 'et-adjustments',
@@ -141,20 +143,14 @@ $kc->add_map(
 			),
 			'params' => array(
 				'general' => array(
-					array(
-						'type'			=> 'text',
-						'label'			=> __( 'Title', 'boxtheme' ),
-						'name'			=> 'title',
-						'description'	=> __( 'The title of the Post Carousel. Leave blank if no title is needed.', 'boxtheme' ),
-						'admin_label'	=> true
-					),
-					array(
-						'type'			=> 'post_taxonomy',
-						'label'			=> __( 'Content Type', 'boxtheme' ),
-						'name'			=> 'post_taxonomy',
-						'description'	=> __( 'Choose supported content type such as post, custom post type, etc.', 'boxtheme' ),
-					),
-					array(
+              array(
+                  'name' => 'bg_url',
+                  'label' => 'Upload Image',
+                  'type' => 'attach_image_url',
+                  'admin_label' => true,
+                  'value' =>get_template_directory_uri().'/img/testimonial.jpg',
+              	),
+            	array(
 						'type'			=> 'dropdown',
 						'label'			=> __( 'Order by', 'boxtheme' ),
 						'name'			=> 'order_by',
@@ -212,42 +208,8 @@ $kc->add_map(
 							'show_when'		=> 'yes'
 						)
 					),
-					array(
-						'type'			=> 'toggle',
-						'label'			=> __( 'Show date', 'boxtheme' ),
-						'name'			=> 'show_date',
-						'description'	=> __( 'Show the post date.', 'boxtheme' ),
-					),
-					array(
-						'type'			=> 'toggle',
-						'label'			=> __( 'Show "Read more" button', 'boxtheme' ),
-						'name'			=> 'show_button',
-						'description'	=> __( 'Show "Read more" button in the post.', 'boxtheme' ),
-						'value'			=> 'yes'
-					),
-					array(
-						'type' 			=> 'number_slider',
-						'label' 		=> __( 'Items per slide', 'boxtheme' ),
-						'name' 	=> 'items_number',
-						'description' 	=> __( 'The number of items displayed per slide (not apply for auto-height).', 'boxtheme' ),
-						'value'			=> '3',
-						'options' => array(
-							'min' => 1,
-							'max' => 10
-						)
-					),
-					array(
-						'type' 			=> 'number_slider',
-						'label' 		=> __( 'Speed', 'boxtheme' ),
-						'name' 			=> 'speed',
-						'description' 	=> __( 'Set the speed at which autoplaying sliders will transition in second.', 'boxtheme' ),
-						'value'			=> 500,
-						'options' => array(
-							'min' => 100,
-							'max' => 1500,
-							'show_input' => true
-						)
-					),
+
+
 					array(
 						'type'			=> 'toggle',
 						'label'			=> __( 'Navigation', 'boxtheme' ),
@@ -299,70 +261,12 @@ $kc->add_map(
 				'styling' => array(
 					array(
 						'name'    => 'css_custom',
-						'type'    => 'css',
-						'options' => array(
-							array(
-								'Title' => array(
-									array('property' => 'color', 'label' => 'Color', 'selector' => '.kc-owl-post-carousel .owl-item .title a, .kc-owl-post-carousel .caption a'),
-									array('property' => 'background-color', 'label' => 'Background Color', 'selector' => '.kc-owl-post-carousel .caption'),
-									array('property' => 'font-family', 'label' => 'Font Family', 'selector' => '.kc-owl-post-carousel .title a, .kc-owl-post-carousel .caption a'),
-									array('property' => 'font-size', 'label' => 'Text Size', 'selector' => '.kc-owl-post-carousel .title a, .kc-owl-post-carousel .caption a'),
-									array('property' => 'line-height', 'label' => 'Line Height', 'selector' => '.kc-owl-post-carousel .owl-item .title a, .kc-owl-post-carousel .caption a'),
-									array('property' => 'font-weight', 'label' => 'Font Weight', 'selector' => '.kc-owl-post-carousel .owl-item .title a, .kc-owl-post-carousel .caption a'),
-									array('property' => 'text-transform', 'label' => 'Text Transform', 'selector' => '.kc-owl-post-carousel .owl-item .title a, .kc-owl-post-carousel .caption a'),
-									array('property' => 'padding', 'label' => 'Padding', 'selector' => '.kc-owl-post-carousel .caption, .kc-owl-post-carousel .owl-item .title'),
-									array('property' => 'margin', 'label' => 'Margin', 'selector' => '.kc-owl-post-carousel .caption, .kc-owl-post-carousel .owl-item .title'),
-								),
-								'Date' => array(
-									array('property' => 'font-family', 'label' => 'Font Family', 'selector' => '.entry-date'),
-									array('property' => 'font-size', 'label' => 'Font Size', 'selector' => '.entry-date'),
-									array('property' => 'line-height', 'label' => 'Line Height', 'selector' => '.entry-date'),
-									array('property' => 'font-weight', 'label' => 'Font Weight', 'selector' => '.entry-date'),
-									array('property' => 'text-transform', 'label' => 'Text Transform', 'selector' => '.entry-date'),
-									array('property' => 'color', 'label' => 'Color', 'selector' => '.entry-date'),
-									array('property' => 'font-weight', 'label' => 'Font Weight', 'selector' => '.entry-date'),
-								),
-								'Text' => array(
-									array('property' => 'font-family', 'label' => 'Font Family', 'selector' => '.in-post-content'),
-									array('property' => 'font-size', 'label' => 'Font Size', 'selector' => '.in-post-content'),
-									array('property' => 'line-height', 'label' => 'Line Height', 'selector' => '.in-post-content'),
-									array('property' => 'font-weight', 'label' => 'Font Weight', 'selector' => '.in-post-content'),
-									array('property' => 'text-transform', 'label' => 'Text Transform', 'selector' => '.in-post-content'),
-									array('property' => 'color', 'label' => 'Color', 'selector' => '.in-post-content'),
-									array('property' => 'font-weight', 'label' => 'Font Weight', 'selector' => '.in-post-content'),
-								),
-								'Read More'=> array(
-									array('property' => 'color', 'label' => 'Text Color', 'selector' => '.read-more'),
-									array('property' => 'background-color', 'label' => 'Background Color', 'selector' => '.read-more'),
-									array('property' => 'color', 'label' => 'Text Hover Color', 'selector' => '.read-more:hover'),
-									array('property' => 'background-color', 'label' => 'Background Hover Color', 'selector' => '.read-more:hover'),
-									array('property' => 'font-family', 'label' => 'Text Font Family', 'selector' => '.read-more'),
-									array('property' => 'font-size', 'label' => 'Font Size', 'selector' => '.read-more'),
-									array('property' => 'line-height', 'label' => 'Line Height', 'selector' => '.read-more'),
-									array('property' => 'font-weight', 'label' => 'Font Weight', 'selector' => '.read-more'),
-									array('property' => 'text-transform', 'label' => 'Text Transform', 'selector' => '.read-more'),
-									array('property' => 'border', 'label' => 'Border', 'selector' => '.read-more'),
-									array('property' => 'border-radius', 'label' => 'Border Radius', 'selector' => '.read-more'),
-									array('property' => 'padding', 'label' => 'Button Size', 'selector' => '.read-more'),
-									array('property' => 'margin', 'label' => 'Margin', 'selector' => '.read-more'),
-								),
-							)
-						)
+						'type'    => 'css'
 					)
 				),
-				'animate' => array(
-					array(
-						'name'    => 'animate',
-						'type'    => 'animate'
-					)
-				),
-
 			)
 		),
-
-	),
-
-	'core'
+	)
 
 );
 
@@ -392,7 +296,6 @@ function cs_enqueue_script(){?>
 <script type="text/javascript">
 	(function($){
 		$( document ).ready(function($){
-
 			kc_front.owl_slider( '.cs-test' );
 		});
 	})(jQuery);
