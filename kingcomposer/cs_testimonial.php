@@ -27,7 +27,6 @@ $el_classess = array(
 	'kc-owl-post-carousel',
 	'owl-carousel',
 	'list-'. $post_type,
-	$taxonomy,
 	$wrap_class
 );
 
@@ -100,7 +99,7 @@ if ( $the_query->have_posts() ) {
 
 				?>
 
-				<div class="in-post-content"><?php echo wp_trim_words( get_the_content(), 25, ' ...' ); ?></div>
+				<div class="in-post-content"><i class="icon-quote-left"></i> icon-quote-left<?php echo wp_trim_words( get_the_content(), 25, ' ...' ); ?></div>
 				</center>
 
 			</div>
