@@ -15,10 +15,12 @@ Use it to make a jobboard cool, have fun, and share what you've learned with oth
 */
 /************ RULE *******************/
 /*************************************/
-.padding-zero{
+.padding-zero,
+.no-padding{
 	padding: 0;
 }
-.margin-zero{
+.margin-zero,
+.no-margin{
 	margin:0;
 }
 .aling-left{

@@ -22,7 +22,7 @@
 <?php get_template_part( 'template/search', 'form' ); ?>
 <?php //get_template_part( 'template/head', 'line' ); ?>
 <?php //get_template_part( 'template/head', 'line' ); ?>
-<div class="container-fluid" class="bg-white" style="background-color: #fff;">
+<div class="container-fluid bg-white no-padding" style="background-color: #fff;">
 <?php
 the_post();
 the_content();
