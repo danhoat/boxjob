@@ -30,40 +30,44 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> id="page-top" >
-    <div class="container">
-        <div class="row" id="mene-line">
-        <div class="col-md-3">
-         <a class="navbar-brand" href="<?php echo home_url();?>">BoxThemes</a>
-         </div>
-        <div class="navbar-collapse1 col-md-9" id="myNavbar">
-             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+   <div class="bg-top-blur">
+   </div>
+   <div class="container-fluid" id="menu-line">
+      <div class="container">
+         <div class="row" >
+            <div class="col-md-3">
+               <a class="navbar-brand" href="<?php echo home_url();?>">BoxThemes</a>
             </div>
-            <nav class="navbar navbar-default navbar-fixed-top1 text-right">
-            <?php bx_user_dropdown_button();?>
+            <div class="navbar-collapse1 col-md-9" id="myNavbar">
+                <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                 </button>
+               </div>
+               <nav class="navbar navbar-default navbar-fixed-top1 text-right">
+                  <?php bx_user_dropdown_button();?>
 
-             <?php    /**
-                * Displays a navigation menu
-                * @param array $args Arguments
-                */
-                $args = array(
-                    'theme_location' => 'main_menu',
-                    'menu' => '',
-                    'container' => '',
-                    'menu_class' => 'menu',
-                    'echo' => true,
-                    'items_wrap' => '<ul id = "%1$s" class = "nav navbar-nav  %2$s">%3$s</ul>',
-                );
-                wp_nav_menu( $args );
-                ?>
+                  <?php    /**
+                   * Displays a navigation menu
+                   * @param array $args Arguments
+                   */
+                   $args = array(
+                       'theme_location' => 'main_menu',
+                       'menu' => '',
+                       'container' => '',
+                       'menu_class' => 'menu',
+                       'echo' => true,
+                       'items_wrap' => '<ul id = "%1$s" class = "nav navbar-nav  %2$s">%3$s</ul>',
+                   );
+                   wp_nav_menu( $args );
+                   ?>
 
-            </nav> <!-- nav !-->
-        </div>
-        </div> <!-- row !-->
-    </div>
+               </nav> <!-- nav !-->
+            </div>
+         </div> <!-- row !-->
+      </div> <!-- container !-->
+   </div>
    <!-- /.navbar-collapse -->
 <!-- /.container-fluid -->

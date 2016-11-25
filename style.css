@@ -115,6 +115,7 @@ h3{
 }
 .search-line{
 	font-family:  Roboto,Arial,sans-serif;
+	padding: 230px 0;
 }
 .search-line .col-md-10{
 	margin-right: 0 !important;
@@ -405,13 +406,20 @@ body#tinymce{
     padding-right:0;
     padding-left:0;
 }
-#mene-line{
+#menu-line{
 	padding-top: 30px;
-	padding-bottom: 200px;
-	border-bottom: 1px solid #ccc;
-	background: url();
+	border-bottom: 1px solid #fff;
 }
 .testimonial-item {
 
 	padding:0 20%;
+}
+.bg-top-blur{
+	background: url('img/top-blur.jpg') top center no-repeat;
+	position: absolute;
+	top:0;
+	height: 900px;
+	width: 100%;
+	opacity: 0.6;
+	z-index: -1;
 }
