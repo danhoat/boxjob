@@ -99,7 +99,7 @@ if ( $the_query->have_posts() ) {
 
 				?>
 
-				<div class="in-post-content"><?php echo wp_trim_words( get_the_content(), 25, ' ...' ); ?></div>
+				<div class="in-post-content"> <i class="fa fa-quote-left" aria-hidden="true"></i><?php echo wp_trim_words( get_the_content(), 25, ' ...' ); ?></div>
 				</center>
 
 			</div>

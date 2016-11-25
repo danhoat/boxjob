@@ -414,6 +414,13 @@ body#tinymce{
 	padding:0 20%;
 	color: #fff;
 }
+.testimonial-item .in-post-content i.fa-quote-left{
+	position: relative;
+	top: -15px;
+	left: -35px;
+	width: 0;
+	font-size: 20px;
+}
 .kc-owl-post-carousel .owl-item .list-item.testimonial-item{
 border: 0;
 box-shadow: none !important;
