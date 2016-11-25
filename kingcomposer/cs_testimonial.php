@@ -68,38 +68,14 @@ if ( $the_query->have_posts() ) {
 				<center>
 
 				<?php
-				if ( has_post_thumbnail($post->ID) && 'yes' === strtolower($thumbnail) ) {
-
+				if ( has_post_thumbnail($post->ID) ) {
 					echo '<div class="image">';
 					echo get_the_post_thumbnail($post->ID, $image_size);
-
-					echo '<h3 class="caption">'. get_the_title() .'</h3>';
 					echo '</div>';
-
-				}else{
-
-					echo '<h3 class="title">'. get_the_title() .'</h3>';
-
 				}
 				?>
-
-				<?php
-					if ( has_post_format( array( 'chat', 'status' ) ) )
-						$format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', 'twentythirteen' );
-					else
-						$format_prefix = '%2$s';
-
-					$date = sprintf( '<span class="date"><time class="entry-date" datetime="%1$s">%2$s</time></span>',
-						esc_attr( get_the_date( 'c' ) ),
-						esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date() ) )
-					);
-
-					if( !empty( $show_date ) && strtolower( $show_date ) == 'yes' )
-						echo '<div class="kc-entry_meta">'. $date.'</div>';
-
-				?>
 				<div class="in-post-content"> <i class="fa fa-quote-left" aria-hidden="true"></i><?php echo wp_trim_words( get_the_content(), 25, ' ...' ); ?></div>
-
+				<?php  echo '<h3 class="title">'. get_the_title() .'</h3>'; ?>
 				</center>
 
 			</div>

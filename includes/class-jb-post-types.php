@@ -172,7 +172,7 @@ class JB_Post_types {
 			'exclude_from_search' => true,
 			'hierarchical'        => false, // Hierarchical causes memory issues - WP loads all records!
 			'query_var'           => false,
-			'supports'            => array( 'title', 'editor', 'author', 'excerpt', 'custom-fields'),
+			'supports'            => array( 'title', 'editor', 'author', 'excerpt', 'custom-fields','thumbnail'),
 			'show_in_nav_menus'   => true
 	    );
 	 	register_post_type( 'testimonial', $args );

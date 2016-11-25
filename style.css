@@ -416,8 +416,17 @@ body#tinymce{
 	padding:0 20%;
 	color: #fff;
 }
+
+.testimonial-item  .post-content{
+	padding-top: 35px;
+}
+.testimonial-item img{
+	max-width: 80px;
+	max-height: 80px;
+	border-radius: 50%;
+}
 .kc-owl-post-carousel .owl-item  .testimonial-item .in-post-content{
-	padding: 25px 0;
+	padding: 10px 0;
 	line-height: 2em;
 }
 .testimonial-item .in-post-content i.fa-quote-left{
@@ -430,6 +439,9 @@ body#tinymce{
 .kc-owl-post-carousel .owl-item .list-item.testimonial-item{
 border: 0;
 box-shadow: none !important;
+}
+.list-testimonial.owl-theme .owl-controls .owl-page span{
+	background: #fff;
 }
 .bg-top-blur{
 	background: url('img/top-blur.jpg') top center no-repeat;
