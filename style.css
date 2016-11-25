@@ -408,11 +408,15 @@ body#tinymce{
 }
 #menu-line{
 	padding-top: 30px;
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #9aa4b1;
 }
 .testimonial-item {
-
 	padding:0 20%;
+	color: #fff;
+}
+.kc-owl-post-carousel .owl-item .list-item.testimonial-item{
+border: 0;
+box-shadow: none !important;
 }
 .bg-top-blur{
 	background: url('img/top-blur.jpg') top center no-repeat;

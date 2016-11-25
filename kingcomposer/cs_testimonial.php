@@ -27,7 +27,6 @@ $el_classess = array(
 	'kc-owl-post-carousel',
 	'owl-carousel',
 	'list-'. $post_type,
-	$taxonomy,
 	$wrap_class
 );
 

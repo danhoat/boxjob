@@ -197,7 +197,7 @@ if ( ! function_exists( 'jb_custom_fonts')):
 		$fonts = array(
 			'open_sans' => array(
 				'title' 		=> "Open Sans",
-				'font_family'	=> "'Open Sans', sans-serif",
+				'font_family'	=> '', //"'Open Sans' ",
 				'google_url' 	=> $static_url."Open+Sans:400italic",
 			),
 			'roboto' => array(
