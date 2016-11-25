@@ -159,7 +159,7 @@ $kc->add_map(
 						'label'			=> __( 'Number of posts', 'boxtheme' ),
 						'name'			=> 'number_post',
 						'description'	=> __( 'Set the number of post displayed.', 'boxtheme' ),
-						'value'			=> '3',
+						'value'			=> 3,
 						'admin_label'	=> true,
 					),
 					array(

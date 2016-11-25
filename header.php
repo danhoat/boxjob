@@ -30,8 +30,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> id="page-top" >
-   <div class="bg-top-blur">
-   </div>
+
    <div class="container-fluid" id="menu-line">
       <div class="container">
          <div class="row" >

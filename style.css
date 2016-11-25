@@ -38,6 +38,9 @@ img{
 body{
 	height1: 3500px;
 }
+.kc-container, .container{
+	max-width: 1140px;
+}
 .kc_tabs{
 	padding-top: 60px;
 }
@@ -416,6 +419,7 @@ body#tinymce{
 #menu-line{
 	padding-top: 30px;
 	border-bottom: 1px solid #9aa4b1;
+	background-color: #25303e;
 }
 .testimonial-item {
 	padding:0 20%;
