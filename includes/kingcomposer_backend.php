@@ -128,6 +128,59 @@ $kc->add_map(
 				),
 			)
 		),
+		'bx_recent_post' => array(
+			'name' => 'BX Recent Post',
+			'description' => __('A block of text with TINYMCE editor', 'boxtheme'),
+			'icon' => 'kc-icon-text',
+			'category' => 'Content',
+			'is_container' => true,
+			'pop_width' => 650,
+			'admin_view'	=> 'text',
+			'preview_editable' => true,
+			'tab_icons' => array(
+				'general' => 'et-tools',
+				'styling' => 'et-adjustments',
+				'animate' => 'et-lightbulb'
+			),
+			'live_editor' => $live_tmpl.'kc_column_text.php',
+			'params' => array(
+
+
+				'general' => array(
+					array(
+						'type'			=> 'text',
+						'label'			=> __( 'Title', 'boxtheme' ),
+						'name'			=> 'title',
+						'description'	=> __( 'Title of Instagaram feed. Leave blank if no title is needed.', 'boxtheme' ),
+						'admin_label'	=> true
+					),
+					array(
+						'type'			=> 'text',
+						'label'			=> __( 'Number of posts', 'boxtheme' ),
+						'name'			=> 'number_post',
+						'description'	=> __( 'Set the number of post displayed.', 'boxtheme' ),
+						'value'			=> '3',
+						'admin_label'	=> true,
+					),
+					array(
+					'type'			=> 'dropdown',
+						'label'			=> __( 'Order', 'boxtheme' ),
+						'name'			=> 'order',
+						'value'     	=> 'DESC',
+						'options'		=> array(
+							'DESC' => __( 'DESC', 'boxtheme' ),
+							'ASC' => __( 'ASC', 'boxtheme' ),
+						),
+						'description'	=> __( 'Direction of FlipBox', 'boxtheme' ),
+					),
+					array(
+						'name' => 'class',
+						'label' => 'Extra Class',
+						'type' => 'text',
+					)
+				)
+			)
+		),
 		'cs_testimonial' => array(
 
 			'name' => __('BoxTheme Testimonial ', 'boxtheme'),
@@ -290,7 +343,8 @@ function kc_cs_testimonial_filter( $atts = array() ){
 
 	return $atts;
 }
-add_action('wp_footer','cs_enqueue_script', 9999);
+add_filter( 'shortcode_cs_testimonial', 'kc_cs_testimonial_filter' );
+//add_action('wp_footer','cs_enqueue_script', 9999);
 function cs_enqueue_script(){?>
 
 <script type="text/javascript">
@@ -302,6 +356,3 @@ function cs_enqueue_script(){?>
 
 </script>
 <?php }
-add_filter( 'shortcode_cs_testimonial', 'kc_cs_testimonial_filter' );
-
-?>

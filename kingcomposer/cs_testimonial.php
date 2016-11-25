@@ -56,7 +56,7 @@ if ( $the_query->have_posts() ) {
 
 
 
-	echo '<div '. implode(' ', $element_attribute) .' style ="height:398px; background1:url('.$bg_url.') top center no-repeat; ">';
+	echo '<div '. implode(' ', $element_attribute) .' style ="height:398px; ">';
 
 	while ( $the_query->have_posts() ) {
 

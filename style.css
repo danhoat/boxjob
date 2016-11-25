@@ -15,6 +15,11 @@ Use it to make a jobboard cool, have fun, and share what you've learned with oth
 */
 /************ RULE *******************/
 /*************************************/
+img{
+	max-width: 100%;
+	overflow: hidden;
+	height: auto;
+}
 .padding-zero,
 .no-padding{
 	padding: 0;
@@ -31,7 +36,7 @@ Use it to make a jobboard cool, have fun, and share what you've learned with oth
 }
 /********* END RULE**/
 body{
-	height: 3500px;
+	height1: 3500px;
 }
 .kc_tabs{
 	padding-top: 60px;
@@ -451,4 +456,9 @@ box-shadow: none !important;
 	width: 100%;
 	opacity: 0.6;
 	z-index: -1;
+}
+footer{
+	padding: 70px 0;
+	background-color: #25303e;
+	color: #fff;
 }
