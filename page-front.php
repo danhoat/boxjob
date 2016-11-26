@@ -19,8 +19,6 @@
  */
 ?>
 <?php get_header(); ?>
-   <div class="bg-top-blur">
-   </div>
 <?php get_template_part( 'template/search', 'form' ); ?>
 <?php //get_template_part( 'template/head', 'line' ); ?>
 <?php //get_template_part( 'template/head', 'line' ); ?>

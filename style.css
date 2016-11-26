@@ -37,6 +37,7 @@ img{
 /********* END RULE**/
 body{
 	height1: 3500px;
+	font-family:  Roboto,Arial,sans-serif;
 }
 .kc-container, .container{
 	max-width: 1140px;
@@ -58,6 +59,16 @@ p{
 }
 h3{
 	font-size: 16px;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+}
+.navbar-default .navbar-nav>li>a:hover{
+	color: #fff;
+}
+body .kc_tabs>.kc_wrapper>.kc_tabs_nav{
+	background: #fff;
+	border-bottom: 1px solid #efefef !important;
 }
 .job-listing-thumbnail img{
 	width: 85px;
@@ -122,8 +133,9 @@ h3{
 	padding: 35px 10px ;
 }
 .search-line{
-	font-family:  Roboto,Arial,sans-serif;
+
 	padding: 230px 0;
+	position: relative;
 }
 .search-line .col-md-10{
 	margin-right: 0 !important;

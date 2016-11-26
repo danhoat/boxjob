@@ -1,5 +1,7 @@
 <?php $search_url = 'http://localhost/et/jb/?page_id=25/'; ?>
 <section id="search_line" class="container-fluid search-line">
+    <div class="bg-top-blur">
+    </div>
     <div class="container">
         <div class="row-fluid">
             <div class="col-md-12">

@@ -19,7 +19,7 @@ $job_query = new WP_Query(
 		'order' 			=> $order,
 	)
 );
-echo '<div class="'.esc_attr( implode(' ', $el_class) ).' job-listing row999">';
+echo '<div class="'.esc_attr( implode(' ', $el_class) ).' job-listing">';
 if ( $job_query->have_posts() ) {
 
 	while ( $job_query->have_posts() ) {
