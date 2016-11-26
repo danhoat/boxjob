@@ -322,10 +322,10 @@ function get_profile_of_user($user_id){
 }
 function bx_user_dropdown_button(){ ?>
 	<ul class="nav navbar-nav navbar-right">
-	    <?php if ( !is_user_logged_in() ): ?>
+	    <?php if ( !is_user_logged_in() ){ ?>
 	    <li><a href="#"  data-toggle="modal" data-target="#modalLogin" class="btn-signin"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
 	    <li><a href="<?php echo bx_get_static_link('signup');?>"><span class="glyphicon glyphicon-user "></span> <?php _e('Sign up','boxtheme');?></a></li>
-	<?php else: ?>
+	<?php } else{ ?>
 		<?php
 	    global $user_ID;
 	    $user = get_userdata( $user_ID );
@@ -338,38 +338,40 @@ function bx_user_dropdown_button(){ ?>
 		    </a>
 
 			<ul class="dropdown-menu dropdown-profile">
-			<li>
-			   <div class="navbar-login">
-			       <div class="row ">
-			           <div class="col-lg-4">
-			               <p class="text-center">
-			                   <?php echo get_avatar($user_ID);?>
-			               </p>
-			           </div>
-			           <div class="col-lg-8">
-			               <p class="text-left"><strong><?php echo $user->user_login;?></strong></p>
-			               <p class="text-left small"><?php echo $user->user_email;?></p>
-			               <p class="text-left">
-			                   <a href="<?php echo bx_get_static_link('profile');?>" class="btn btn-primary btn-block btn-sm"><?php _e('Profile','boxtheme');?></a>
-			               </p>
-			           </div>
-			       </div>
-			   </div>
-			</li>
-			<li class="divider"></li>
-			<li>
-			   <div class="navbar-login navbar-login-session">
-			       <div class="row">
-			           <div class="col-lg-12">
-			               <p>
-			                   <a href="<?php echo wp_logout_url( home_url() );?>" class="btn btn-danger btn-block btn-sign-out"><i class="fa fa-sign-out"></i><?php _e('Log out','boxtheme');?></a>
-			               </p>
-			           </div>
-			       </div>
-			   </div>
-			</li>
-		</ul>
+				<li>
+				   <div class="navbar-login">
+				       <div class="row ">
+				           <div class="col-lg-4">
+				               <p class="text-center">
+				                   <?php echo get_avatar($user_ID);?>
+				               </p>
+				           </div>
+				           <div class="col-lg-8">
+				               <p class="text-left"><strong><?php echo $user->user_login;?></strong></p>
+				               <p class="text-left small"><?php echo $user->user_email;?></p>
+				               <p class="text-left">
+				                   <a href="<?php echo bx_get_static_link('profile');?>" class="btn btn-primary btn-block btn-sm"><?php _e('Profile','boxtheme');?></a>
+				               </p>
+				           </div>
+				       </div>
+				   </div>
+				</li>
+				<li class="divider"></li>
+				<li>
+				   <div class="navbar-login navbar-login-session">
+				       <div class="row">
+				           <div class="col-lg-12">
+				               <p>
+				                   <a href="<?php echo wp_logout_url( home_url() );?>" class="btn btn-danger btn-block btn-sign-out"><i class="fa fa-sign-out"></i><?php _e('Log out','boxtheme');?></a>
+				               </p>
+				           </div>
+				       </div>
+				   </div>
+				</li>
+			</ul>
 		</li>
-	</ul>
-	<?php endif;
+
+	<?php }; ?>
+	</ul> <?php
+
 }

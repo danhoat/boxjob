@@ -46,12 +46,12 @@
                </div>
                <nav class="navbar navbar-default navbar-fixed-top1 text-right">
                   <?php bx_user_dropdown_button();?>
-
                   <?php    /**
                    * Displays a navigation menu
                    * @param array $args Arguments
                    */
-                   $args = array(
+
+                  $args = array(
                        'theme_location' => 'main_menu',
                        'menu' => '',
                        'container' => '',
@@ -59,8 +59,9 @@
                        'echo' => true,
                        'items_wrap' => '<ul id = "%1$s" class = "nav navbar-nav  %2$s">%3$s</ul>',
                    );
-                   wp_nav_menu( $args );
+                  wp_nav_menu( $args );
                    ?>
+
 
                </nav> <!-- nav !-->
             </div>
