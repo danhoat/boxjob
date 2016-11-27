@@ -42,9 +42,9 @@ endif;
 	 * get location of job
 	 * @return  string job_location name
 	 */
-	if( ! function_exists('jb_get_job_location')):
+	if( ! function_exists('bx_get_job_location')):
 
-		function jb_get_job_location( $job_id ) {
+		function bx_get_job_location( $job_id ) {
 
 			$terms = get_the_terms( $job_id, JOB_LOCATION );
 
@@ -56,9 +56,9 @@ endif;
 		}
 	endif;
 
-	if( ! function_exists('jb_get_job_type_string')):
+	if( ! function_exists('bx_get_job_type_string')):
 
-		function jb_get_job_type_string( $job_id ) {
+		function bx_get_job_type_string( $job_id ) {
 
 			$terms 		= get_the_terms( get_the_ID(), JOB_TYPE );
 			$on_draught = "";
@@ -78,9 +78,9 @@ endif;
 		}
 	endif;
 
-	if( ! function_exists('jb_get_job_cat')):
+	if( ! function_exists('bx_get_job_cat')):
 
-		function jb_get_job_cat( $job_id ) {
+		function bx_get_job_cat( $job_id ) {
 
 			$terms 		= get_the_terms( get_the_ID(), JOB_CAT );
 			$on_draught = "";
@@ -100,9 +100,11 @@ endif;
 		}
 	endif;
 
-	if( ! function_exists('jb_get_job_company_name')):
 
-	function jb_get_job_company_name( $job_id ) {
+
+	if( ! function_exists('bx_get_job_company_name')):
+
+	function bx_get_job_company_name( $job_id ) {
 
 		$job  = get_post($job_id);
 
@@ -113,14 +115,16 @@ endif;
 	}
 	endif;
 
-	if( ! function_exists('jb_convert_job')):
+	if( ! function_exists('bx_convert_job')):
 
-		function jb_convert_job( $post ) {
-
+		function bx_convert_job( $post ) {
+			$job_id = $post->ID;
 			$job = $post;
-			$job->is_featured 	= get_post_meta($post->ID,'is_featured', true);
-			$job->the_type  	= jb_get_job_type_string( $post->ID );
-
+			$job->is_featured = get_post_meta($post->ID,'is_featured', true);
+			$job->the_type  	= bx_get_job_type_string( $job_id );
+			$job->cat 			= bx_get_job_cat($job_id);
+			$job->location 	= bx_get_job_location($job_id);
+			$job->company 		= bx_get_job_company_name($job_id);
 			return $job;
 
 		}
@@ -222,6 +226,7 @@ if ( ! function_exists( 'jb_custom_fonts')):
 		unset($font);
 	}
 endif;
+
 function is_job_has_order($job_id) {
 	$has_order = get_post_meta($job_id, 'has_order', true);
 	if($has_order)
@@ -232,6 +237,7 @@ function is_free_submit_job(){
 	return true;
 	return get_option( 'is_free_submit_job', false );
 }
+
 function is_pending_job(){
 	return get_option( 'is_free_submit_job', false );
 }

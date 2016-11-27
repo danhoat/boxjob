@@ -95,14 +95,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				return $check;
 			}
 			$tax_input 	= $request['tax_input'];
-			$cat_id 	= isset($tax_input['job_cat'])  ? (int)$tax_input['job_cat'] : 0;
+			$cat_id 		= isset($tax_input['job_cat'])  ? (int)$tax_input['job_cat'] : 0;
 			$location 	= isset($tax_input['location']) ? (int)$tax_input['location'] : 0;
 			$request 	= wp_parse_args( $request, $default);
 
 			if(	$cat_id ){
 				$tax_input['job_cat'] = array($cat_id);
 			}
-			$type_id = isset($tax_input['type']) ? (int) $tax_input['type'] : 0;
+
+			$type_id = isset( $tax_input['type'] ) ? (int) $tax_input['type'] : 0;
 
 			if(	$type_id ){
 				$tax_input['type'] = array($cat_id);
@@ -129,6 +130,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 			}
 			return $job_id;
 		}
+		/**
+			check validte when post a job vai front-end.
+		*/
 		function check_validate($request){
 			$validate = true;
 
@@ -153,7 +157,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		function get_post_status_step_2(){
 			$post_status = 'draft';
 
-			if(current_user_can('manager_options'))
+			if( current_user_can('manager_options') )
 				return 'publish';
 
 			if( is_free_submit_job() ) {

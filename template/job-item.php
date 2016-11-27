@@ -1,7 +1,7 @@
 <?php
     global $job;
 
-    $job    = jb_convert_job($job);
+    $job    = bx_convert_job($job);
     // echo '<pre>';
     // var_dump($job);
     // echo '</pre>';
@@ -34,14 +34,14 @@
         echo '<div class="col-md-6 col-xs-6 job-listing-info ">';
             echo '<h5 class="job-listing-title"><a href="'.get_permalink().'">'.$job->post_title.'</a></h3>';
                 echo '<div class="row-fluid">';
-                    echo 'YoungWorld ... ';
-                    echo 'YoungWorld ...';
-                    echo 'YoungWorld ...';
+                    echo $job->cat;
+                    echo $job->location;
+                    echo $job->company;
                 echo '</div>';
         echo '</div>';
         echo '<div class="col-md-5 col-xs-6 right">';
             echo '<div class="col-md-6 padding-zero">';
-                echo '<i class="fa fa-map-marker" aria-hidden="true"></i> '.jb_get_job_location( $job->ID );
+                echo '<i class="fa fa-map-marker" aria-hidden="true"></i> '.$job->location;
             echo '</div>';
             echo '<div class="col-md-6 aling-right">';
                 echo '<button> Full time</button>';
